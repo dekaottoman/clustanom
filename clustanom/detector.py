@@ -17,7 +17,7 @@ class ClusterAnomalyDetector(BaseEstimator, OutlierMixin):
         Parameters
         ----------
         clusterer : object
-            A scikit-learn-compatible clustering model (e.g., KMeans, DBSCAN, etc.).
+            A scikit-learn-compatible clustering model (e.g., KMeans, Birch, etc.).
             The model must implement a `fit` method and either a `predict` or `fit_predict` method.
 
         contamination : float, default=0.1
