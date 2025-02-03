@@ -1,0 +1,92 @@
+C:\Users\dekat\OneDrive\Desktop\clustanom\.venv\Scripts\python.exe C:\Users\dekat\OneDrive\Desktop\clustanom\tests\test_detector.py
+Testing for clusterer AffinityPropagation
+----Passed model definition test for clusterer AffinityPropagation
+----Passed fit test for clusterer AffinityPropagation
+----Passed score_samples test for clusterer AffinityPropagation
+----Passed predict test for clusterer AffinityPropagation
+
+
+Testing for clusterer AgglomerativeClustering
+----Passed model definition test for clusterer AgglomerativeClustering
+!!!!Error fitting model with clusterer AgglomerativeClustering >> 'AgglomerativeClustering' object has no attribute 'predict'
+!!!!Error scoring samples with clusterer AgglomerativeClustering >> 'NoneType' object is not iterable
+!!!!Error predicting with clusterer AgglomerativeClustering >> 'NoneType' object is not iterable
+
+
+Testing for clusterer Birch
+----Passed model definition test for clusterer Birch
+----Passed fit test for clusterer Birch
+----Passed score_samples test for clusterer Birch
+----Passed predict test for clusterer Birch
+
+
+Testing for clusterer DBSCAN
+----Passed model definition test for clusterer DBSCAN
+!!!!Error fitting model with clusterer DBSCAN >> 'DBSCAN' object has no attribute 'predict'
+!!!!Error scoring samples with clusterer DBSCAN >> 'NoneType' object is not iterable
+!!!!Error predicting with clusterer DBSCAN >> 'NoneType' object is not iterable
+
+
+Testing for clusterer KMeans
+----Passed model definition test for clusterer KMeans
+----Passed fit test for clusterer KMeans
+----Passed score_samples test for clusterer KMeans
+----Passed predict test for clusterer KMeans
+
+
+Testing for clusterer MiniBatchKMeans
+----Passed model definition test for clusterer MiniBatchKMeans
+----Passed fit test for clusterer MiniBatchKMeans
+----Passed score_samples test for clusterer MiniBatchKMeans
+----Passed predict test for clusterer MiniBatchKMeans
+
+
+Testing for clusterer MeanShift
+----Passed model definition test for clusterer MeanShift
+----Passed fit test for clusterer MeanShift
+----Passed score_samples test for clusterer MeanShift
+----Passed predict test for clusterer MeanShift
+
+
+Testing for clusterer OPTICS
+----Passed model definition test for clusterer OPTICS
+!!!!Error fitting model with clusterer OPTICS >> 'OPTICS' object has no attribute 'predict'
+!!!!Error scoring samples with clusterer OPTICS >> 'NoneType' object is not iterable
+!!!!Error predicting with clusterer OPTICS >> 'NoneType' object is not iterable
+
+
+Testing for clusterer SpectralClustering
+----Passed model definition test for clusterer SpectralClustering
+!!!!Error fitting model with clusterer SpectralClustering >> 'SpectralClustering' object has no attribute 'predict'
+!!!!Error scoring samples with clusterer SpectralClustering >> 'NoneType' object is not iterable
+!!!!Error predicting with clusterer SpectralClustering >> 'NoneType' object is not iterable
+
+
+Testing for clusterer FeatureAgglomeration
+!!!!Error creating model with clusterer FeatureAgglomeration >> The provided model does not seem to be a scikit-learn or compatible clustering model. The model needs to contain  'fit', 'predict' or 'fit_predict' methods.
+
+
+Testing for clusterer SpectralBiclustering
+!!!!Error creating model with clusterer SpectralBiclustering >> The provided model does not seem to be a scikit-learn or compatible clustering model. The model needs to contain  'fit', 'predict' or 'fit_predict' methods.
+
+
+Testing for clusterer SpectralCoclustering
+!!!!Error creating model with clusterer SpectralCoclustering >> The provided model does not seem to be a scikit-learn or compatible clustering model. The model needs to contain  'fit', 'predict' or 'fit_predict' methods.
+
+
+Testing for clusterer GaussianMixture
+----Passed model definition test for clusterer GaussianMixture
+----Passed fit test for clusterer GaussianMixture
+----Passed score_samples test for clusterer GaussianMixture
+----Passed predict test for clusterer GaussianMixture
+
+
+Testing for clusterer BayesianGaussianMixture
+----Passed model definition test for clusterer BayesianGaussianMixture
+----Passed fit test for clusterer BayesianGaussianMixture
+----Passed score_samples test for clusterer BayesianGaussianMixture
+----Passed predict test for clusterer BayesianGaussianMixture
+
+
+
+Process finished with exit code 0
