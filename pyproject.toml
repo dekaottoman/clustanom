@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "clustanom"
+version = "0.1.0"
+description = "A scikit-learn compatible clustering-based anomaly detection library."
+authors = [{ name = "Teoman Berkay Ayaz", email = "tberkayayaz@gmail.com" }]
+license = { text = "MIT" }
+readme = "README.md"
+keywords = ["machine learning", "anomaly detection", "clustering", "scikit-learn"]
+requires-python = ">=3.8"
+dependencies = [
+    "numpy",
+    "scipy",
+    "scikit-learn"
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "black", "flake8", "mypy"]
+
+[project.urls]
+Homepage = "https://github.com/dekaottoman/clustanom"
+Documentation = "https://github.com/dekaottoman/clustanom/blob/main/README.md"
+Source = "https://github.com/dekaottoman/clustanom"
+
+[tool.setuptools]
+packages = ["clustanom"]
+license-files = ["LICENSE.md"]
+
+
