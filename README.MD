@@ -10,16 +10,29 @@ ClustAnom is a scikit-learn compatible anomaly detection framework that utilizes
 - Easy integration with existing machine learning workflows.
 
 ## 🚀 Supported Clustering Algorithms
+ClustAnom supports clustering models that implement `fit`, `predict` or `fit_predict` methods:
 
-Currently, ClustAnom supports clustering models that implement `fit` and `predict` methods:
+- `AffinityPropagation`
+- `AgglomerativeClustering`
+- `Birch`
+- `DBSCAN`
+- `KMeans`
+- `MiniBatchKMeans`
+- `MeanShift`
+- `OPTICS`
+- `SpectralClustering`
+- `GaussianMixture`
+- `BayesianGaussianMixture`
 
-- AffinityPropagation
-- Birch
-- KMeans
-- MiniBatchKMeans
-- MeanShift
-- GaussianMixture
-- BayesianGaussianMixture
+### ❌ Unsupported Clustering Algorithms
+Explicitly unsupported clustering algorithms include, but are not limited to:
+
+- `FeatureAgglomeration`
+- `SpectralBiclustering`
+- `SpectralCoclustering`
+
+### ⚠️ Warnings
+Clusterers which return anomaly labels (e.g. `DBSCAN`) will cause a discrepancy between `fit` and `score_samples` where in `score_samples` the anomaly score for already anomalous samples will be `np.inf` or `self.scaler_.data_max_` based on `self.scale_scores`. Additionally, clusterers with no `predict` require double fitting in both `fit` and `score_samples` or `predict` which may cause additional discrepancies.
 
 ## 📦 Installation
 You can install ClustAnom via PyPI:

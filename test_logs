@@ -1,4 +1,3 @@
-C:\Users\dekat\OneDrive\Desktop\clustanom\.venv\Scripts\python.exe C:\Users\dekat\OneDrive\Desktop\clustanom\tests\test_detector.py
 Testing for clusterer AffinityPropagation
 ----Passed model definition test for clusterer AffinityPropagation
 ----Passed fit test for clusterer AffinityPropagation
@@ -8,9 +7,9 @@ Testing for clusterer AffinityPropagation
 
 Testing for clusterer AgglomerativeClustering
 ----Passed model definition test for clusterer AgglomerativeClustering
-!!!!Error fitting model with clusterer AgglomerativeClustering >> 'AgglomerativeClustering' object has no attribute 'predict'
-!!!!Error scoring samples with clusterer AgglomerativeClustering >> 'NoneType' object is not iterable
-!!!!Error predicting with clusterer AgglomerativeClustering >> 'NoneType' object is not iterable
+----Passed fit test for clusterer AgglomerativeClustering
+----Passed score_samples test for clusterer AgglomerativeClustering
+----Passed predict test for clusterer AgglomerativeClustering
 
 
 Testing for clusterer Birch
@@ -22,9 +21,9 @@ Testing for clusterer Birch
 
 Testing for clusterer DBSCAN
 ----Passed model definition test for clusterer DBSCAN
-!!!!Error fitting model with clusterer DBSCAN >> 'DBSCAN' object has no attribute 'predict'
-!!!!Error scoring samples with clusterer DBSCAN >> 'NoneType' object is not iterable
-!!!!Error predicting with clusterer DBSCAN >> 'NoneType' object is not iterable
+----Passed fit test for clusterer DBSCAN
+----Passed score_samples test for clusterer DBSCAN
+----Passed predict test for clusterer DBSCAN
 
 
 Testing for clusterer KMeans
@@ -50,16 +49,16 @@ Testing for clusterer MeanShift
 
 Testing for clusterer OPTICS
 ----Passed model definition test for clusterer OPTICS
-!!!!Error fitting model with clusterer OPTICS >> 'OPTICS' object has no attribute 'predict'
-!!!!Error scoring samples with clusterer OPTICS >> 'NoneType' object is not iterable
-!!!!Error predicting with clusterer OPTICS >> 'NoneType' object is not iterable
+----Passed fit test for clusterer OPTICS
+----Passed score_samples test for clusterer OPTICS
+----Passed predict test for clusterer OPTICS
 
 
 Testing for clusterer SpectralClustering
 ----Passed model definition test for clusterer SpectralClustering
-!!!!Error fitting model with clusterer SpectralClustering >> 'SpectralClustering' object has no attribute 'predict'
-!!!!Error scoring samples with clusterer SpectralClustering >> 'NoneType' object is not iterable
-!!!!Error predicting with clusterer SpectralClustering >> 'NoneType' object is not iterable
+----Passed fit test for clusterer SpectralClustering
+----Passed score_samples test for clusterer SpectralClustering
+----Passed predict test for clusterer SpectralClustering
 
 
 Testing for clusterer FeatureAgglomeration
@@ -86,7 +85,3 @@ Testing for clusterer BayesianGaussianMixture
 ----Passed fit test for clusterer BayesianGaussianMixture
 ----Passed score_samples test for clusterer BayesianGaussianMixture
 ----Passed predict test for clusterer BayesianGaussianMixture
-
-
-
-Process finished with exit code 0

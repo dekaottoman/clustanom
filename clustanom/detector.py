@@ -47,6 +47,9 @@ class ClusterAnomalyDetector(BaseEstimator, OutlierMixin):
             raise ValueError("The provided model does not seem to be a scikit-learn or compatible clustering model. "
                              "The model needs to contain  'fit', 'predict' or 'fit_predict' methods.")
         else:
+            if hasattr(clusterer, "fit_predict") and not hasattr(clusterer, "predict"):
+                warnings.warn("Clusterers with no predict require double fitting in both fit and score_samples/predict.")
+
             self.clusterer = clusterer
             self.contamination = contamination
             self.scale_scores = scale_scores
@@ -84,7 +87,8 @@ class ClusterAnomalyDetector(BaseEstimator, OutlierMixin):
         elif hasattr(self.clusterer, "labels_"):
             warnings.warn("Clusterers which return anomaly labels (e.g. DBSCAN) will cause a discrepancy between fit"
                           " and score_samples where in score samples the anomaly score for already anomalous samples"
-                          " will be np.inf.")
+                          " will be np.inf or self.scaler_.data_max_ based on self.scale_scores. To suppress the "
+                          "warning switch over to a non-anomaly detection clusterer.")
             labels = self.clusterer.labels_
             unique_labels = np.setdiff1d(np.unique(labels), -1)
             centroids = np.array([X[np.where(labels == label)].mean(axis=0) for label in unique_labels])
@@ -93,7 +97,14 @@ class ClusterAnomalyDetector(BaseEstimator, OutlierMixin):
             raise ValueError("The clusterer does not provide any centroids or class labels.")
 
         percentile_point = 100 - (self.contamination * 100)
-        cluster_labels = self.clusterer.predict(X)
+
+        if hasattr(self.clusterer, "predict"):
+            cluster_labels = self.clusterer.predict(X)
+        elif hasattr(self.clusterer, "fit_predict"):
+            cluster_labels = self.clusterer.fit_predict(X)
+        else:
+            raise ValueError("The provided clusterer does not support prediction.")
+
         distances = np.array([np.linalg.norm(self.centroids_[label] - sample) for label, sample in zip(cluster_labels, X)])
         if self.scale_scores:
             self.scaler_.fit(distances.reshape(-1, 1))
@@ -120,8 +131,10 @@ class ClusterAnomalyDetector(BaseEstimator, OutlierMixin):
         """
         if hasattr(self.clusterer, "predict"):
             cluster_labels = self.clusterer.predict(X)
+        elif hasattr(self.clusterer, "fit_predict"):
+            cluster_labels = self.clusterer.fit_predict(X)
         else:
-            cluster_labels = self.labels_
+            raise ValueError("The provided clusterer does not support prediction.")
 
         distances = list()
         for label, sample in zip(cluster_labels, X):
@@ -130,7 +143,10 @@ class ClusterAnomalyDetector(BaseEstimator, OutlierMixin):
                 distance = np.linalg.norm(centroid - sample)
                 distances.append(distance)
             else:
-                distances.append(np.inf)
+                if self.scale_scores:
+                    distances.append(self.scaler_.data_max_[0])
+                else:
+                    distances.append(np.inf)
 
         distances = np.array(distances)
         if self.scale_scores:
