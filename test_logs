@@ -85,4 +85,3 @@ Testing for clusterer BayesianGaussianMixture
 ----Passed fit test for clusterer BayesianGaussianMixture
 ----Passed score_samples test for clusterer BayesianGaussianMixture
 ----Passed predict test for clusterer BayesianGaussianMixture
-

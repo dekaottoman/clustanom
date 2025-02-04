@@ -64,7 +64,7 @@ anomaly_scores = anomaly_detector.score_samples(X)
 print("Anomaly Scores:", anomaly_scores)
 ```
 
-## ⚙️ Parameters
+## ⚙️ Parameters 
 
 - **`clusterer`**: Any scikit-learn compatible clustering model (e.g., KMeans, Birch, Gaussian Mixture Model).
 - **`contamination`**: The proportion of anomalies in the dataset, which determines the threshold for anomaly classification.
