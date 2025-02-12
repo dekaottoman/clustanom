@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 setup(
     name="clustanom",
-    version="0.0.1",
+    version="0.1.0",
     author="Teoman Berkay Ayaz",
     author_email="your_email@example.com",
     description="ClustAnom is a Scikit-Learn compatible, clustering based anomaly detection library.",
