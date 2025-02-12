@@ -10,8 +10,8 @@ setup(
     url="https://github.com/dekaottoman/clustanom",
     packages=find_packages(),
     install_requires=[
-        "numpy",
         "scikit-learn",
+        "numpy",
     ],
     classifiers=[
         "Programming Language :: Python :: 3",
